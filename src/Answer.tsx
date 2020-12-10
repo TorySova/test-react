@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { answerType } from './store/state'
 
 type AnswerType = {
@@ -6,20 +6,18 @@ type AnswerType = {
     onClickHandler: (isCorrect: boolean) => void
 }
 
-export const Answer = (props: AnswerType) => {
+export const Answer = React.memo((props: AnswerType) => {
     const { answer, onClickHandler } = props
 
     return (
         <div className="answer">
             {
-                answer.map((it, index) =>
-                            
+                answer.map((it, index) =>                           
                     <div key={index} className={"variant"}
                         onClick={()=>onClickHandler(it.isCorrect)}> 
                         {it.variant} </div>
-
                 )
             }
         </div>
     )
-}
+})

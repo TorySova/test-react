@@ -10,7 +10,7 @@ type PropsType = {
 
 }
 
-export const Test = (props: PropsType) => {
+export const Test = React.memo((props: PropsType) => {
     const {question, answer, onClickHandler} = props
     return (
         <div className="test">
@@ -18,4 +18,4 @@ export const Test = (props: PropsType) => {
             <Answer answer={answer} onClickHandler={onClickHandler} />
         </div>
     )
-}
+})

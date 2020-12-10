@@ -47,4 +47,31 @@ export const initState: initStateType = [
             { variant: 'хук, для работы с асинхроном', isCorrect: false, number: 0 }
         ]
     },
+    {
+        id: 5,
+        question: "Хуки из библиотеки react-redux - это...",
+        answer: [
+            { variant: 'useState, useMemo', isCorrect: false, number: 0 },
+            { variant: 'useCallback, useRef', isCorrect: false, number: 0 },
+            { variant: 'useSelector, useDispatch', isCorrect: true, number: 1 }
+        ]
+    },
+    {
+        id: 6,
+        question: "Методы store...",
+        answer: [
+            { variant: 'getState, subscribe, dispatch', isCorrect: true, number: 1 },
+            { variant: 'reduser, state', isCorrect: false, number: 0 },
+            { variant: 'then, catch, finally', isCorrect: false, number: 0 }
+        ]
+    },
+    {
+        id: 7,
+        question: "Чтобы обновить данные нужно отправить запрос типа...",
+        answer: [
+            { variant: 'get', isCorrect: false, number: 0 },
+            { variant: 'post', isCorrect: false, number: 0 },
+            { variant: 'put', isCorrect: true, number: 1 }
+        ]
+    },
 ];

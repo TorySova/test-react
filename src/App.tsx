@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import './App.css';
 import { Result } from './Result';
 import { initState } from './store/state';
 import { Test } from './Test';
 
-function App() {
+const App = React.memo(() => {
   const arrQuestion = initState.map(it => it.question)
   const arrAnswer = initState.map(it => it.answer)
   const [currentQuestion, setCurrentQuestion] = useState(1)
@@ -13,27 +13,27 @@ function App() {
 
 
 
+
   let [number, setNumber] = useState(0)
   const onClickHandler = (isCorrect: boolean) => {
     if (isCorrect) {
       setNumber(number + 1)
-    }   
-      setTimeout(() =>
-        (setCurrentQuestion(currentQuestion + 1),
-          setQuestion(arrQuestion[currentQuestion]),
-          setAnswer(arrAnswer[currentQuestion])), 1500
-      )
+    }
+    setCurrentQuestion(currentQuestion + 1)
+    setQuestion(arrQuestion[currentQuestion])
+    setAnswer(arrAnswer[currentQuestion])
+    
   }
 
 
   return (
     <div >
-      {currentQuestion === 5
-      ? <Result number={number}/>
-      : <Test question={question} answer={answer} onClickHandler={onClickHandler}/>}
-      
+      {currentQuestion === 8
+        ? <Result number={number} />
+        : <Test question={question} answer={answer} onClickHandler={onClickHandler} />}
+
     </div>
   );
-}
+})
 
 export default App;
