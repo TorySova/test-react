@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Result } from './Result';
+import { initState } from './store/state';
+import { Test } from './Test';
 
 function App() {
+  const arrQuestion = initState.map(it => it.question)
+  const arrAnswer = initState.map(it => it.answer)
+  const [currentQuestion, setCurrentQuestion] = useState(1)
+  const [question, setQuestion] = useState(arrQuestion[0])
+  const [answer, setAnswer] = useState(arrAnswer[0])
+
+
+
+  let [number, setNumber] = useState(0)
+  const onClickHandler = (isCorrect: boolean) => {
+    if (isCorrect) {
+      setNumber(number + 1)
+    }   
+      setTimeout(() =>
+        (setCurrentQuestion(currentQuestion + 1),
+          setQuestion(arrQuestion[currentQuestion]),
+          setAnswer(arrAnswer[currentQuestion])), 1500
+      )
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      {currentQuestion === 5
+      ? <Result number={number}/>
+      : <Test question={question} answer={answer} onClickHandler={onClickHandler}/>}
+      
     </div>
   );
 }
