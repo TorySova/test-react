@@ -103,7 +103,6 @@
 .variant:hover{
   transform: scale(1.1, 1.1);
   transition: all 0.5s ease;
-  background: rgb(189, 247, 203);
 }
 
 .true{
@@ -155,5 +154,9 @@
   .preview{
     height: 200px;
     width: 80%;
+  }
+  .variant:hover{
+    transform: none;
+    transition: none;
   }
 }
