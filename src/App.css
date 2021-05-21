@@ -1,7 +1,7 @@
 .test { 
-  background-image: url(https://images.clipartlogo.com/files/istock/previews/9642/96427505-vector-green-plants-seamless-pattern-background.jpg);
+  background-image: url(https://image.freepik.com/free-vector/color-seamless-space-pattern_102902-2360.jpg);
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
@@ -10,38 +10,100 @@
   /* margin: 50px auto; */
 }
 
+.preview{
+  background-color: rgba(138, 195, 233, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  height: 200px;
+  width: 40%;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.preview a{
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  text-align: center;
+  background: rgb(255, 215, 242);
+  color: black;
+  padding: 15px 50px;
+  border-radius: 30px;  
+  text-decoration: none;
+  /* margin-bottom: 20px; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.preview a:hover{
+    transform: scale(1.1, 1.1);
+    transition: all 0.5s ease;
+    background: rgb(189, 247, 203);
+}
+
+
 .question{
-  margin-top: 20px;
-  background: rgb(255, 255, 255);
+  background-color: rgb(143, 210, 255);
   display: flex;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100px;
-  width: 70%;
+  width: 40%;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .answer{
-  background: rgb(255, 255, 255);
+  background-color: rgba(138, 195, 233, 0.7);
+  /* background: rgb(255, 255, 255);
+  opacity: 0.8; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  height: 400px;
-  width: 70%;
+  height: 500px;
+  width: 40%;
   margin-top: 20px;
+  border-radius: 30px;
 }
 
 .variant{
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 80px;
-  width: 90%;
-  background: rgb(255, 248, 182);
+  width: 80%;
+  background: rgb(255, 215, 242);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;  
+}
+
+.variant:hover{
+  transform: scale(1.1, 1.1);
+  transition: all 0.5s ease;
+  background: rgb(189, 247, 203);
 }
 
 .true{
@@ -68,10 +130,30 @@
 
 .result{
   min-height: 100vh;
-  background-image: url(https://images.clipartlogo.com/files/istock/previews/9642/96427505-vector-green-plants-seamless-pattern-background.jpg);
+  background-image: url(https://image.freepik.com/free-vector/color-seamless-space-pattern_102902-2360.jpg);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 40px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 1024px) {
+  .question{
+    width: 90%;
+    height: 80px;
+    font-size: 15px;
+  }
+  .answer{
+    height: 500px;
+    width: 90%;
+  }
+  .variant{
+    height: 70px;
+    font-size: 15px;
+  }
+  .preview{
+    height: 200px;
+    width: 80%;
+  }
 }

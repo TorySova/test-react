@@ -15,7 +15,8 @@ export const Answer = React.memo((props: AnswerType) => {
                 answer.map((it, index) =>                           
                     <div key={index} className={"variant"}
                         onClick={()=>onClickHandler(it.isCorrect)}> 
-                        {it.variant} </div>
+                        {it.variant}
+                    </div>
                 )
             }
         </div>

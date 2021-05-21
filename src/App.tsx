@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { Preview } from './Preview';
 import { Result } from './Result';
 import { initState } from './store/state';
 import { Test } from './Test';
@@ -22,15 +24,27 @@ const App = React.memo(() => {
     setCurrentQuestion(currentQuestion + 1)
     setQuestion(arrQuestion[currentQuestion])
     setAnswer(arrAnswer[currentQuestion])
-    
+
   }
 
 
   return (
     <div >
-      {currentQuestion === 8
-        ? <Result number={number} />
-        : <Test question={question} answer={answer} onClickHandler={onClickHandler} />}
+      <Switch>
+        <Route path={"/"} exact render={() => <Preview
+          setCurrentQuestion={setCurrentQuestion}
+          setAnswer={setAnswer}
+          arrAnswer={arrAnswer}
+          setQuestion={setQuestion}
+          arrQuestion={arrQuestion}
+          setNumber={setNumber}/>} />
+        <Route path={"/result"} exact render={() => <Result number={number}/>} />
+        <Route path={"/test"} render={() => <Test question={question}
+          answer={answer}
+          onClickHandler={onClickHandler}
+          currentQuestion={currentQuestion}
+          number={number} />} />
+      </Switch>
 
     </div>
   );

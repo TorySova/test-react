@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 type PropsType = {
     number: number
@@ -6,8 +7,11 @@ type PropsType = {
 
 export const Result = React.memo((props: PropsType) => {
     return (
-        <div className="result">
-            {`правильных ответов ${props.number} из 7`}
+        <div className="test">
+            <div className="preview">
+                {`Правильных ответов ${props.number} из 7`}
+                <NavLink to={'/'} className='goHome'>На главную!</NavLink>
+            </div>
         </div>
     )
 })
